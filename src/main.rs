@@ -1,20 +1,17 @@
 // main.rs
 
-use std::fs;
-use std::io::{self, Write};
-use std::process::Command;
-use std::error::Error;
-use rss::Channel;
-use epub_builder::{EpubBuilder, ZipLibrary, EpubContent, ReferenceType};
-use html2text::from_read;
-use lettre::{Message, SmtpTransport, Transport};
+use epub_builder::{EpubBuilder, EpubContent, ReferenceType, ZipLibrary};
 use lettre::message::header::ContentType;
 use lettre::transport::smtp::authentication::Credentials;
+use lettre::{Message, SmtpTransport, Transport};
 use reqwest;
+use rss::Channel;
+use sanitize_html::rules::predefined::DEFAULT;
+use sanitize_html::sanitize_str;
 use scraper::{Html, Selector};
 use serde::Deserialize;
-use sanitize_html::sanitize_str;
-use sanitize_html::rules::predefined::DEFAULT;
+use std::error::Error;
+use std::fs;
 
 #[derive(Deserialize)]
 struct Config {
