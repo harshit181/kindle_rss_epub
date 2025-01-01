@@ -1,0 +1,8 @@
+rss_feeds:
+  - "http://www.livemint.com/rss/industry"
+email:
+  from: "your_email@example.com"
+  to: "recipient_email@example.com"
+  smtp_server: "smtp.example.com"
+  username: "your_email@example.com"
+  password: "your_password"

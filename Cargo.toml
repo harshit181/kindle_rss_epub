@@ -1,0 +1,16 @@
+[package]
+name = "kindle_rss_epub"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0.217", features = ["derive"] }
+serde_yaml = "0.9.34+deprecated"
+rss = "2.0"
+reqwest = { version = "0.12", features = ["blocking"] }
+epub-builder = "0.7.4"
+lettre = "0.11.1"
+lettre_email = "0.9.4"
+scraper = "0.22.0"
+html2text = "0.13.6"
+sanitize_html="0.8.1"
